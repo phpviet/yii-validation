@@ -1,0 +1,35 @@
+{
+    "name": "phpviet/yii-validation",
+    "type": "yii2-extension",
+    "description": "Yii validation hổ trợ kiểm tra dữ liệu đặc thù trong nước",
+    "keywords": [
+        "phpviet",
+        "yii-validation"
+    ],
+    "homepage": "https://github.com/phpviet/yii-validation",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vuong Xuong Minh",
+            "email": "vuongxuongminh@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "yiisoft/yii2": "~2.0.14"
+    },
+    "autoload": {
+        "psr-4": {
+            "phpViet\\yii\\validation\\": "src"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        },
+        "bootstrap": "phpViet\\yii\\validation\\Bootstrap"
+	}
+}
