@@ -40,9 +40,9 @@ class Bootstrap implements BootstrapInterface
     protected function loadTrans(I18N $i18n): void
     {
         $i18n->translations['phpviet/validation'] = array_merge([
-            'class'    => 'yii\i18n\PhpMessageSource',
+            'class' => 'yii\i18n\PhpMessageSource',
             'basePath' => '@phpviet/yii/validation/messages',
-            'fileMap'  => [
+            'fileMap' => [
                 'phpviet/validation' => 'validation.php',
             ],
         ], $i18n->translations['phpviet/validation'] ?? []);
@@ -55,15 +55,15 @@ class Bootstrap implements BootstrapInterface
     {
         Validator::$builtInValidators = array_merge(Validator::$builtInValidators, [
             'land_line_vn' => LandLineVNValidator::class,
-            'mobile_vn'    => MobileVNValidator::class,
-            'id_vn'        => IdVNValidator::class,
-            'ip_vn'        => IpVNValidator::class,
-            'ipv4_vn'      => [
-                'class'   => IpVNValidator::class,
+            'mobile_vn' => MobileVNValidator::class,
+            'id_vn' => IdVNValidator::class,
+            'ip_vn' => IpVNValidator::class,
+            'ipv4_vn' => [
+                'class' => IpVNValidator::class,
                 'version' => IpVNValidator::IPV4,
             ],
             'ipv6_vn' => [
-                'class'   => IpVNValidator::class,
+                'class' => IpVNValidator::class,
                 'version' => IpVNValidator::IPV6,
             ],
         ]);
