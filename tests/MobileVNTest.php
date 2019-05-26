@@ -12,6 +12,7 @@ use yii\base\DynamicModel;
 
 /**
  * @author Vuong Minh <vuongxuongminh@gmail.com>
+ *
  * @since 1.0.0
  */
 class MobileVNTest extends TestCase
