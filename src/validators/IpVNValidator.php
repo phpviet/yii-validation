@@ -33,7 +33,7 @@ class IpVNValidator extends Validator
     /**
      * {@inheritdoc}
      */
-    public function init()
+    public function init(): void
     {
         $this->message = $this->message ?? $this->getDefaultMessage();
 
@@ -43,7 +43,7 @@ class IpVNValidator extends Validator
     /**
      * {@inheritdoc}
      */
-    public function validateValue($value)
+    public function validateValue($value): ?array
     {
         if (ConcreteValidator::ipVN($this->version)->validate($value)) {
             return;
@@ -57,7 +57,7 @@ class IpVNValidator extends Validator
      *
      * @throws \yii\base\InvalidConfigException
      */
-    public function clientValidateAttribute($model, $attribute, $view)
+    public function clientValidateAttribute($model, $attribute, $view): ?string
     {
         return $this->getClientIpValidator()->clientValidateAttribute($model, $attribute, $view);
     }
@@ -67,7 +67,7 @@ class IpVNValidator extends Validator
      *
      * @throws \yii\base\InvalidConfigException
      */
-    public function getClientOptions($model, $attribute)
+    public function getClientOptions($model, $attribute): array
     {
         return $this->getClientIpValidator()->getClientOptions($model, $attribute);
     }
@@ -97,20 +97,20 @@ class IpVNValidator extends Validator
     /**
      * Trả về [[IpValidator]] hổ trợ cho việc tạo js validator tại client.
      *
+     * @return IpValidator
      * @throws \yii\base\InvalidConfigException
      *
-     * @return IpValidator
      */
     protected function getClientIpValidator(): IpValidator
     {
         if (null === $this->_clientIpValidator) {
             return $this->_clientIpValidator = Yii::createObject([
-                'class'          => IpValidator::class,
-                'message'        => $this->message,
+                'class' => IpValidator::class,
+                'message' => $this->message,
                 'ipv4NotAllowed' => $this->message,
                 'ipv6NotAllowed' => $this->message,
-                'ipv4'           => null === $this->version || self::IPV4 === $this->version,
-                'ipv6'           => null === $this->version || self::IPV6 === $this->version,
+                'ipv4' => null === $this->version || self::IPV4 === $this->version,
+                'ipv6' => null === $this->version || self::IPV6 === $this->version,
             ]);
         }
 
