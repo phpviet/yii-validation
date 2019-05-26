@@ -19,6 +19,10 @@
         "phpviet/validation": "^1.0",
         "yiisoft/yii2": "~2.0.13"
     },
+    "require-dev": {
+        "phpunit/phpunit": "~7.5",
+        "scrutinizer/ocular": "^1.5"
+    },
     "autoload": {
         "psr-4": {
             "phpviet\\yii\\validation\\": "src"
