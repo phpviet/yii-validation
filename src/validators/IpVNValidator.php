@@ -46,7 +46,7 @@ class IpVNValidator extends Validator
     public function validateValue($value): ?array
     {
         if (ConcreteValidator::ipVN($this->version)->validate($value)) {
-            return;
+            return null;
         }
 
         return [$this->message, []];
