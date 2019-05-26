@@ -8,9 +8,9 @@
 
 namespace phpviet\yii\validation\validators;
 
-use PHPViet\Validation\Rules\LandLineVN as PatternProvider;
 use Yii;
 use yii\validators\RegularExpressionValidator;
+use PHPViet\Validation\Rules\LandLineVN as PatternProvider;
 
 /**
  * @author Vuong Minh <vuongxuongminh@gmail.com>

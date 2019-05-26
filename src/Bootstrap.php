@@ -8,13 +8,13 @@
 
 namespace phpviet\yii\validation;
 
-use phpviet\yii\validation\validators\IdVNValidator;
-use phpviet\yii\validation\validators\IpVNValidator;
-use phpviet\yii\validation\validators\LandLineVNValidator;
-use phpviet\yii\validation\validators\MobileVNValidator;
-use yii\base\BootstrapInterface;
 use yii\i18n\I18N;
 use yii\validators\Validator;
+use yii\base\BootstrapInterface;
+use phpviet\yii\validation\validators\IdVNValidator;
+use phpviet\yii\validation\validators\IpVNValidator;
+use phpviet\yii\validation\validators\MobileVNValidator;
+use phpviet\yii\validation\validators\LandLineVNValidator;
 
 /**
  * @author Vuong Minh <vuongxuongminh@gmail.com>
