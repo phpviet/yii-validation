@@ -8,21 +8,19 @@
 
 namespace phpviet\yii\validation\validators;
 
-use Yii;
-
-use yii\validators\Validator;
-use yii\validators\IpValidator;
-
-use PHPViet\Validation\Validator as ConcreteValidator;
 use PHPViet\Validation\Rules\IpVN as ConcreteIpVN;
+use PHPViet\Validation\Validator as ConcreteValidator;
+use Yii;
+use yii\validators\IpValidator;
+use yii\validators\Validator;
 
 /**
  * @author Vuong Minh <vuongxuongminh@gmail.com>
+ *
  * @since 1.0.0
  */
 class IpVNValidator extends Validator
 {
-
     const IPV4 = ConcreteIpVN::IPV4;
 
     const IPV6 = ConcreteIpVN::IPV6;
@@ -33,7 +31,7 @@ class IpVNValidator extends Validator
     public $version;
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function init()
     {
@@ -43,20 +41,20 @@ class IpVNValidator extends Validator
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function validateValue($value)
     {
         if (ConcreteValidator::ipVN($this->version)->validate($value)) {
-
-            return null;
+            return;
         }
 
         return [$this->message, []];
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
+     *
      * @throws \yii\base\InvalidConfigException
      */
     public function clientValidateAttribute($model, $attribute, $view)
@@ -65,7 +63,8 @@ class IpVNValidator extends Validator
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
+     *
      * @throws \yii\base\InvalidConfigException
      */
     public function getClientOptions($model, $attribute)
@@ -74,7 +73,7 @@ class IpVNValidator extends Validator
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     protected function getDefaultMessage(): string
     {
@@ -90,6 +89,7 @@ class IpVNValidator extends Validator
 
     /**
      * @var IpValidator
+     *
      * @see getClientIpValidator()
      */
     private $_clientIpValidator;
@@ -97,23 +97,23 @@ class IpVNValidator extends Validator
     /**
      * Trả về [[IpValidator]] hổ trợ cho việc tạo js validator tại client.
      *
-     * @return IpValidator
      * @throws \yii\base\InvalidConfigException
+     *
+     * @return IpValidator
      */
     protected function getClientIpValidator(): IpValidator
     {
         if (null === $this->_clientIpValidator) {
             return $this->_clientIpValidator = Yii::createObject([
-                'class' => IpValidator::class,
-                'message' => $this->message,
+                'class'          => IpValidator::class,
+                'message'        => $this->message,
                 'ipv4NotAllowed' => $this->message,
                 'ipv6NotAllowed' => $this->message,
-                'ipv4' => null === $this->version || self::IPV4 === $this->version,
-                'ipv6' => null === $this->version || self::IPV6 === $this->version
+                'ipv4'           => null === $this->version || self::IPV4 === $this->version,
+                'ipv6'           => null === $this->version || self::IPV6 === $this->version,
             ]);
         }
 
         return $this->_clientIpValidator;
     }
-
 }

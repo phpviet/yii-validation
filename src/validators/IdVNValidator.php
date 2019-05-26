@@ -8,21 +8,19 @@
 
 namespace phpviet\yii\validation\validators;
 
-use Yii;
-
-use yii\validators\RegularExpressionValidator;
-
 use PHPViet\Validation\Rules\IdVN as PatternProvider;
+use Yii;
+use yii\validators\RegularExpressionValidator;
 
 /**
  * @author Vuong Minh <vuongxuongminh@gmail.com>
+ *
  * @since 1.0.0
  */
 class IdVNValidator extends RegularExpressionValidator
 {
-
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function init()
     {
@@ -31,5 +29,4 @@ class IdVNValidator extends RegularExpressionValidator
 
         parent::init();
     }
-
 }
