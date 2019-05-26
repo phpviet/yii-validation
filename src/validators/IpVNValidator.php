@@ -8,11 +8,11 @@
 
 namespace phpviet\yii\validation\validators;
 
+use Yii;
+use yii\validators\Validator;
+use yii\validators\IpValidator;
 use PHPViet\Validation\Rules\IpVN as ConcreteIpVN;
 use PHPViet\Validation\Validator as ConcreteValidator;
-use Yii;
-use yii\validators\IpValidator;
-use yii\validators\Validator;
 
 /**
  * @author Vuong Minh <vuongxuongminh@gmail.com>
@@ -99,7 +99,6 @@ class IpVNValidator extends Validator
      *
      * @return IpValidator
      * @throws \yii\base\InvalidConfigException
-     *
      */
     protected function getClientIpValidator(): IpValidator
     {

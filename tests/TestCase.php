@@ -8,9 +8,9 @@
 
 namespace phpviet\yii\validation\tests;
 
-use PHPUnit\Framework\TestCase as BaseTestCase;
 use Yii;
 use yii\helpers\ArrayHelper;
+use PHPUnit\Framework\TestCase as BaseTestCase;
 
 /**
  * @author Vuong Minh <vuongxuongminh@gmail.com>
