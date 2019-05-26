@@ -26,7 +26,7 @@ class MobileVNValidator extends RegularExpressionValidator
      */
     public function init()
     {
-        $this->message = $this->message ?? Yii::t('phpviet/validation', 'mobile');
+        $this->message = $this->message ?? Yii::t('phpviet/validation', '{attribute} must be a mobile phone number of Vietnam.');
         $this->pattern = PatternProvider::pregFormat();
 
         parent::init();

@@ -26,7 +26,7 @@ class LandLineVNValidator extends RegularExpressionValidator
      */
     public function init()
     {
-        $this->message = $this->message ?? Yii::t('phpviet/validation', 'land_line');
+        $this->message = $this->message ?? Yii::t('phpviet/validation', '{attribute} must be a land line phone number of Vietnam.');
         $this->pattern = PatternProvider::pregFormat();
 
         parent::init();

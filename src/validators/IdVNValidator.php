@@ -26,7 +26,7 @@ class IdVNValidator extends RegularExpressionValidator
      */
     public function init()
     {
-        $this->message = $this->message ?? Yii::t('phpviet/validation', 'id');
+        $this->message = $this->message ?? Yii::t('phpviet/validation', '{attribute} must be an id number of Vietnam.');
         $this->pattern = PatternProvider::pregFormat();
 
         parent::init();

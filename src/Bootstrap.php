@@ -44,10 +44,9 @@ class Bootstrap implements BootstrapInterface
             'class' => 'yii\i18n\PhpMessageSource',
             'basePath' => '@phpviet/yii/validation/messages',
             'fileMap' => [
-                'phpviet/validation' => 'validation'
+                'phpviet/validation' => 'validation.php'
             ]
         ], $i18n->translations['phpviet/validation'] ?? []);
-
     }
 
     /**

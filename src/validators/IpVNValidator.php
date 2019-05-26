@@ -80,11 +80,11 @@ class IpVNValidator extends Validator
     {
         switch ($this->version) {
             case self::IPV4:
-                return Yii::t('phpviet/validation', 'ipv4');
+                return Yii::t('phpviet/validation', '{attribute} must be Vietnam ipv4.');
             case self::IPV6:
-                return Yii::t('phpviet/validation', 'ipv6');
+                return Yii::t('phpviet/validation', '{attribute} must be Vietnam ipv6.');
             default:
-                return Yii::t('phpviet/validation', 'ip');
+                return Yii::t('phpviet/validation', '{attribute} must be Vietnam ip.');
         }
     }
 
